@@ -3,7 +3,7 @@ function telephoneCheck(str) {
   return regexp.test(str);
 }
 
-//^(1\s)?--country code
+//^(1\s?)?--country code
 //(\(\d{3}\)|\d{3})--first 3 digits and/or parentheses
 //[\s\-?]?\d{3}[\s\-?]?--2nd 3 digits and dash/space
 //\d{4}--last 4 digits
