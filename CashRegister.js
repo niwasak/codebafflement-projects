@@ -14,4 +14,9 @@ function checkCashRegister(price, cash, cid) {
     var output = {status: null, change: []};
     var change = cash - price;
     
+    if (register.total === change) {
+        output.status = "CLOSED";
+        output.change = cid;
+        return output;
+    }
 }
