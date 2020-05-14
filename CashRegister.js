@@ -1,4 +1,4 @@
-var currency = [
+var cashValue = [
     {name: "PENNY", val: 0.01},
     {name: "NICKEL", val: 0.05},
     {name: "DIME", val: 0.1},
@@ -11,8 +11,14 @@ var currency = [
 ];
 
 function checkCashRegister(price, cash, cid) {
-    var output = {status: null, change: []};
     var change = cash - price;
-    
-    //test
+    let total = parseFloat(cid.reduce((acc, next) => {return acc + next[1], 0.0})).toFixed(2);
+    let changeStatus = {status: "", change: []};
+
+    if (total < change) {
+        return {status: "INSUFFICIENT_FUNDS", change: []};
+    } else if (total == change) {
+        return {status: "CLOSED", change: cid};
+    } else 
+
 }
